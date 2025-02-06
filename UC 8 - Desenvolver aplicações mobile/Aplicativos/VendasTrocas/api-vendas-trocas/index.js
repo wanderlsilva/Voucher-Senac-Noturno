@@ -16,5 +16,5 @@ app.use('/mensagens', require('./routes/mensagens'));
 app.use('/transacoes', require('./routes/transacoes'));
 
 app.listen(PORT, () => {
-    console.log('Servidor rodando na porta', [PORT]);
+    console.log('Servidor rodando na porta', PORT);
 });
