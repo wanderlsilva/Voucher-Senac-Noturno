@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, StyleSheet  } from "react-native-web";
+import { View, Text, Button, StyleSheet  } from "react-native";
 
 const Login = ({ navigation }) => {
     return (
