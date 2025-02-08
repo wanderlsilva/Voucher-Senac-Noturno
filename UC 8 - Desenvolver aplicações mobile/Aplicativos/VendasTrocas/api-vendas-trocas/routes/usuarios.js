@@ -12,4 +12,11 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/', (req, res) => {
+    connection.query('SELECT * FROM usuarios', (err, results) => {
+        if(err) return res.status(500).json({ error: err.message});
+        res.json(results);
+    });
+});
+
 module.exports = router;
