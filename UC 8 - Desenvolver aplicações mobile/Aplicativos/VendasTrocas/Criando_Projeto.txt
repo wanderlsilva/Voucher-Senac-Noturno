@@ -1,0 +1,78 @@
+CONFIGURANDO API
+
+1) Inicie um novo projeto Node.js
+mkdir api-vendas-trocas
+cd api-vendas-trocas
+npm init -y
+
+2) Instale as dependências necessárias: (Banco de Dados MYSQL)
+npm install express mysql2 cors body-parser
+
+3) Crie um arquivo index.js para o servidor
+
+(ESTRUTURA DO PROJETO)
+api-vendas-trocas/
+│
+├── index.js          # Arquivo principal do servidor
+├── database.js       # Configuração do banco de dados
+├── routes/           # Rotas da API
+│   ├── usuarios.js
+│   ├── produtos.js
+│   ├── anuncios.js
+│   ├── mensagens.js
+│   └── transacoes.js
+└── package.json
+
+4) Inicie o servidor:
+node index.js
+
+CONFIGURANDO PROJETO REACT NATIVE
+1) Instale o Expo CLI:
+npm install -g expo-cli
+
+2) Crie um novo projeto React Native:
+expo init app-vendas-trocas
+
+3) Navegue para a pasta do projeto:
+cd app-vendas-trocas
+
+4) Instale as dependências necessárias:
+npm install axios
+
+5) Inicie o projeto:
+expo start
+
+(ESTRUTURA DO PROJETO REACT NATIVE)
+app-vendas-trocas/
+│
+├── src/
+│   ├── screens/
+│   │   └── CadastroUsuario.js
+│   ├── services/
+│   │   └── api.js
+│   └── App.js
+└── package.json
+
+INSTALANDO O EMULADOR ANDROID STUDIO
+1) Baixe e instale o Android Studio
+2) Durante a instalação, marque a opção para instalar o Android SDK, Android Virtual Device (AVD) e SDK Command-line Tools.
+
+Você precisa adicionar o SDK do Android ao caminho do sistema.
+Vá em Painel de Controle > Sistema > Configurações Avançadas > Variáveis de Ambiente
+
+3) Em "Variáveis do Sistema", clique em "Novo" e adicione:
+Nome: ANDROID_HOME
+Valor: C:\Users\SEU_USUARIO\AppData\Local\Android\Sdk
+
+4) Ainda em "Variáveis do Sistema", edite a variável Path e adicione:
+%ANDROID_HOME%\platform-tools
+%ANDROID_HOME%\emulator
+
+5) Criar um emulador Android
+Abra o Android Studio e vá até Tools > AVD Manager
+Clique em "Create Virtual Device"
+Escolha um dispositivo e instale a versão do Android recomendada
+Após criar, clique em "Start" para iniciar o emulador
+
+Instale a biblioteca de ícones:
+npm install react-native-vector-icons

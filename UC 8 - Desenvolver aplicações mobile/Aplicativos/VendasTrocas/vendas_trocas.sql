@@ -1,6 +1,7 @@
 CREATE DATABASE vendas_trocas;
 USE vendas_trocas;
 
+-- Tabela de usuários
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -12,6 +13,7 @@ CREATE TABLE usuarios (
     data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Tabela de produtos
 CREATE TABLE produtos (
     id_produto INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
@@ -26,6 +28,7 @@ CREATE TABLE produtos (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id_usuario)
 );
 
+-- Tabela de anúncios
 CREATE TABLE anuncios (
     id_anuncio INT AUTO_INCREMENT PRIMARY KEY,
     produto_id INT NOT NULL,
@@ -35,6 +38,7 @@ CREATE TABLE anuncios (
     FOREIGN KEY (produto_id) REFERENCES produtos(id_produto)
 );
 
+-- Tabela de mensagens
 CREATE TABLE mensagens (
     id_mensagem INT AUTO_INCREMENT PRIMARY KEY,
     remetente_id INT NOT NULL,
@@ -47,6 +51,7 @@ CREATE TABLE mensagens (
     FOREIGN KEY (anuncio_id) REFERENCES anuncios(id_anuncio)
 );
 
+-- Tabela de transações
 CREATE TABLE transacoes (
     id_transacao INT AUTO_INCREMENT PRIMARY KEY,
     anuncio_id INT NOT NULL,
