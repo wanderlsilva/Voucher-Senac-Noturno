@@ -46,6 +46,6 @@ app.use('/transacoes', require('./routes/transacoes'));
 // Iniciar servidor
 // Inicia o servidor na porta definida (3000). Quando o servidor estiver rodando,
 // a mensagem Servidor rodando na porta 3000 será exibida no console.
-app.listen(PORT, () => {
-    console.log('Servidor rodando na porta', PORT);
+app.listen(3000, '0.0.0.0', () => {
+    console.log('Servidor rodando em http://0.0.0.0:3000');
 });

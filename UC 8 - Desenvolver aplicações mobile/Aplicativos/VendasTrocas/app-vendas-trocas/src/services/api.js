@@ -7,7 +7,7 @@ import axios from 'axios';
 // Se a API está rodando localmente, essa URL aponta para o servidor backend na porta 3000.
 // Em um ambiente de produção, essa URL precisa ser alterada para o domínio real da API.
 const api = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: "http://10.0.2.2:3000",
 });
 
 // Aqui estamos exportando a instância api, permitindo que ela seja importada e usada em outros arquivos do projeto.

@@ -81,6 +81,8 @@ npm install react-native-vector-icons
 npm install react-native-screens
 npm install lottie-react-native
 npm install --save lottie-ios@3.2.3
+npm install @lottiefiles/dotlottie-react
+
 
 Site https://lottiefiles.com/
 
