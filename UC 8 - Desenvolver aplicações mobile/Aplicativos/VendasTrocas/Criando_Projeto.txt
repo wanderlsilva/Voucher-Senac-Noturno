@@ -74,5 +74,16 @@ Clique em "Create Virtual Device"
 Escolha um dispositivo e instale a versão do Android recomendada
 Após criar, clique em "Start" para iniciar o emulador
 
-Instale a biblioteca de ícones:
+*) Instale a biblioteca de ícones:
 npm install react-native-vector-icons
+
+*) Instale a Biblioteca de Animações
+npm install react-native-screens
+npm install lottie-react-native
+npm install --save lottie-ios@3.2.3
+
+Site https://lottiefiles.com/
+
+*) Instale as bibliotecas para ícones e navegação:
+npm install react-native-paper
+npm install @react-navigation/stack
