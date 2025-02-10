@@ -31,10 +31,13 @@ router.post('/', (req, res) => {
 });
 
 // Rota para autenticação de usuário
-app.post("/login", (req, res) => {
+router.post("/login", (req, res) => {
     const { email, senha } = req.body;
-    const sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
-    db.query(sql, [email, senha], (err, results) => {
+    console.log("Tentativa de login com:", email, senha); // Debug
+
+    const query = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
+    connection.query(query, [email, senha], (err, results) => {
+        console.error("Erro no banco:", err);
         if (err) return res.status(500).json({ error: "Erro no servidor" });
 
         if (results.length > 0) {

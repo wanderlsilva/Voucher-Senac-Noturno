@@ -36,8 +36,8 @@ const Dashboard = () => {
 
             {/* Área de Informações */}
             <View style={styles.infoCard}>
-                <Text style={styles.infoText}>📊 Status do Sistema</Text>
-                <Text style={styles.status}>Tudo funcionando corretamente ✅</Text>
+                <Text style={styles.infoText}>Status do Sistema</Text>
+                <Text style={styles.status}>Tudo funcionando corretamente</Text>
             </View>
         </View>
     );
