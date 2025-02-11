@@ -3,6 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Image } fro
 import { useNavigation } from '@react-navigation/native';
 import api from '../services/api';
 import Icon from 'react-native-vector-icons/Feather';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Login = () => {
     const navigation = useNavigation();
@@ -25,15 +27,17 @@ const Login = () => {
         if (!validarCampos()) return;
 
         try {
-            const response = await api.post('/usuarios/login', { email, senha });
+            const response = await api.post('/usuarios/login', {email, senha});
+            
             if (response.data.success) {
+                await AsyncStorage.setItem('user', JSON.stringify(response.data.user)); // Salva os dados do usuário
                 Alert.alert("Sucesso", "Login realizado!");
                 navigation.replace("Dashboard"); // Redireciona para Dashboard
             } else {
-                Alert.alert("Erro", response.data.message);
+                Alert.alert("Erro", 'Email ou senha incorretos!');
             }
         } catch (error) {
-            Alert.alert('Erro', 'E-mail ou senha inválidos.');
+            Alert.alert('Erro', 'Erro de Login');
             console.error(error);
         }
     };
